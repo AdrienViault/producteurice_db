@@ -1,0 +1,12 @@
+[
+	{
+		"id": 1,
+		"name": "Patates",
+		"vector_image_path": "/icons/potato.svg"
+	},
+	{
+		"id": 2,
+		"name": "Légumes",
+		"vector_image_path": "/icons/vegetables.svg"
+	}
+]

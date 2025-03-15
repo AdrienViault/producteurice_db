@@ -1,0 +1,22 @@
+[
+	{
+		"id": 1,
+		"name": "Marché",
+		"vector_image_path": "/icons/street_market.svg"
+	},
+	{
+		"id": 2,
+		"name": "Supérette",
+		"vector_image_path": "/icons/convenience_store.svg"
+	},
+	{
+		"id": 3,
+		"name": "AMAP",
+		"vector_image_path": "/icons/amap.svg"
+	},
+	{
+		"id": 4,
+		"name": "Supermarché",
+		"vector_image_path": "/icons/supermarket.svg"
+	}
+]
