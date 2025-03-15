@@ -1,0 +1,154 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table producteurice {
+  id integer [primary key]
+  producteurice_name string
+  farm_name string
+  created_at timestamp 
+  address string
+  coordinates POINT
+  hero_video_path string
+  expense_list list
+  expense_list_element_id integer
+  photo_path_list list
+}
+
+Table product_category {
+  id integer  [primary key]
+  name string
+  vector_image_path string
+}
+
+Table product {
+  id integer  [primary key]
+  producteurice_id integer
+  product_category_id integer
+  photo_path string
+  short_description string
+  long_description string
+  sub_product_list list
+  sub_product_list_element_id integer
+}
+
+Table seller {
+  id integer [primary key]
+  product_list list
+  product_list_element_id integer
+  name string
+  address string
+  coordinates POINT
+  seller_category_id integer
+  photo_path string
+}
+
+Table seller_category{
+  id integer  [primary key]
+  name string
+  vector_image_path string
+}
+
+Table animal{
+  id integer  [primary key]
+  producteurice_id integer
+  animal_category_id integer
+  number integer
+  weekly_workload_avg integer
+  weekly_workload_summer integer
+  weekly_workload_winter integer
+  official_label_id integer
+  unofficial_differentiator_id integer
+}
+
+Table animal_category{
+  id integer  [primary key]
+  name string
+  vector_image_path string
+}
+
+Table crop{
+  id integer  [primary key]
+  producteurice_id integer
+  crop_category_id integer
+  surface integer
+  weekly_workload_avg integer
+  weekly_workload_summer integer
+  weekly_workload_winter integer
+  official_label_id integer
+  unofficial_differentiator_id integer
+}
+
+
+Table crop_category{
+  id integer  [primary key]
+  name string
+  vector_image_path string
+}
+
+Table official_label{
+  id integer  [primary key]
+  name string
+  image_path string
+  short_description string
+  long_description string
+}
+
+Table unofficial_differentiator{
+  id integer  [primary key]
+  name string
+  image_path string
+  short_description string
+  long_description string
+}
+
+Table expense{
+  id integer  [primary key]
+  producteurice_id integer
+  expense_category_id integer
+  name string
+  image_path string
+  short_description string
+  long_description string
+  value float
+}
+
+Table expense_category{
+  id integer  [primary key]
+  name string
+  vector_image_path string
+}
+
+Ref  : product.producteurice_id > producteurice.id  // many-to-one
+Ref  : product.product_category_id > product_category.id // many-to-one
+Ref  : seller.seller_category_id > seller_category.id  // many-to-one
+Ref  : animal.producteurice_id > producteurice.id // many-to-one
+Ref  : animal.animal_category_id > animal_category.id  // many-to-one
+Ref  : crop.producteurice_id > producteurice.id // many-to-one
+Ref  : crop.crop_category_id > crop_category.id  // many-to-one
+Ref  : crop.official_label_id > official_label.id // many-to-one
+Ref  : crop.unofficial_differentiator_id > unofficial_differentiator.id  // many-to-one
+Ref  : animal.official_label_id > official_label.id // many-to-one
+Ref  : animal.unofficial_differentiator_id > unofficial_differentiator.id  // many-to-one
+Ref  : product.sub_product_list_element_id > product.id  // many-to-one
+
+Ref  : expense.producteurice_id  > producteurice.id  // many-to-one
+Ref  : expense.expense_category_id > expense_category.id  // many-to-one
+Ref  : seller.product_list_element_id > product.id  // many-to-one
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
