@@ -1,0 +1,17 @@
+[
+	{
+		"id": 1,
+		"name": "Poules",
+		"vector_image_path": "/icons/chicken.svg"
+	},
+	{
+		"id": 2,
+		"name": "Vaches",
+		"vector_image_path": "/icons/cow.svg"
+	},
+	{
+		"id": 3,
+		"name": "Abeilles",
+		"vector_image_path": "/icons/bee.svg"
+	}
+]
