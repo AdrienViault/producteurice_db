@@ -1,0 +1,20 @@
+[
+	{
+		"id": 1,
+		"name": "Médaille Dribs",
+		"description": "Efforts remarquables",
+		"vector_image_path": "/icons/unofficial_medal.svg"
+	},
+	{
+		"id": 2,
+		"name": "Trophée Dribs",
+		"description": "Excellent",
+		"vector_image_path": "/icons/unofficial_trophy.svg"
+	},
+	{
+		"id": 3,
+		"name": "Trophée Dribs",
+		"description": "Exemplaire",
+		"vector_image_path": "/icons/unofficial_crown.svg"
+	}
+]

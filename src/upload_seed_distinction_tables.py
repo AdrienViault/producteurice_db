@@ -39,34 +39,24 @@ except Exception as e:
 # --- Define the SQLAlchemy Base and Models ---
 Base = declarative_base()
 
-class AnimalCategory(Base):
-    __tablename__ = 'animal_category'
+class Label(Base):
+    __tablename__ = 'label'
     id = Column(Integer, primary_key=True)
     name = Column(String, nullable=False)
+    description = Column(String)  # Optional description field
     vector_image_path = Column(String, nullable=False)
 
-class CropCategory(Base):
-    __tablename__ = 'crop_category'
+class UnofficialLabel(Base):
+    __tablename__ = 'unofficial_label'
     id = Column(Integer, primary_key=True)
     name = Column(String, nullable=False)
-    vector_image_path = Column(String, nullable=False)
-
-class ProductCategory(Base):
-    __tablename__ = 'product_category'
-    id = Column(Integer, primary_key=True)
-    name = Column(String, nullable=False)
-    vector_image_path = Column(String, nullable=False)
-
-class SellerCategory(Base):
-    __tablename__ = 'seller_category'
-    id = Column(Integer, primary_key=True)
-    name = Column(String, nullable=False)
+    description = Column(String)  # Optional description field
     vector_image_path = Column(String, nullable=False)
 
 # --- Create Tables if They Don't Exist ---
 try:
     Base.metadata.create_all(engine)
-    print("Ensured all seed tables exist.")
+    print("Ensured all distinction seed tables exist.")
 except Exception as e:
     print("Error creating tables:", e)
     exit(1)
@@ -77,20 +67,16 @@ session = Session()
 
 # --- Mapping of Seed Files to Models ---
 seed_files = {
-    "animal_category": "database_seeds/category_tables/animal_category.json",
-    "crop_category": "database_seeds/category_tables/crop_category.json",
-    "product_category": "database_seeds/category_tables/product_category.json",
-    "seller_category": "database_seeds/category_tables/seller_category.json",
+    "label": "database_seeds/distinction_tables/label.json",
+    "unofficial_label": "database_seeds/distinction_tables/unofficial_label.json",
 }
 
 model_mapping = {
-    "animal_category": AnimalCategory,
-    "crop_category": CropCategory,
-    "product_category": ProductCategory,
-    "seller_category": SellerCategory
+    "label": Label,
+    "unofficial_label": UnofficialLabel,
 }
 
-# --- Insert/Merge Seed Data for All Tables ---
+# --- Insert/Merge Seed Data for All Distinction Tables ---
 for table_name, file_path in seed_files.items():
     try:
         with open(file_path, "r") as f:
@@ -106,7 +92,7 @@ for table_name, file_path in seed_files.items():
 # --- Commit the Session ---
 try:
     session.commit()
-    print("All seed data inserted successfully.")
+    print("All distinction seed data inserted successfully.")
 except Exception as e:
     session.rollback()
     print("Error committing seed data:", e)

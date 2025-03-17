@@ -1,0 +1,14 @@
+[
+	{
+		"id": 1,
+		"name": "Agriculture biologique",
+		"description": "Produit issu de l'agriculture biologique française",
+		"vector_image_path": "/icons/label_ab.svg"
+	},
+	{
+		"id": 2,
+		"name": "Demeter",
+		"description": "Produit issu de l'agriculture biodynamique",
+		"vector_image_path": "/icons/label_demeter.svg"
+	}
+]
