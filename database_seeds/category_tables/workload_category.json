@@ -1,0 +1,12 @@
+[
+	{
+		"id": 1,
+		"name": "animal",
+		"vector_image_path": "/icons/eukaryote.svg"
+	},
+	{
+		"id": 2,
+		"name": "crop",
+		"vector_image_path": "/icons/prokaryote.svg"
+	}
+]

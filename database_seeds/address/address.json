@@ -1,0 +1,24 @@
+[
+	{
+		"id": 1,
+		"farm_id": 1,
+		"house_number": "",
+		"street": "La Grange Gauthier",
+		"postal_code": "42800",
+		"city": "Saint-Romain-en-Jarez",
+		"country": "France",
+		"latitude": 45.57297134352161,
+		"longitude": 4.5094994859044695
+	},
+	{
+		"id": 2,
+		"farm_id": 2,
+		"house_number": "458",
+		"street": "Rue De La Grande Terre",
+		"postal_code": "38660",
+		"city": "Le Touvet",
+		"country": "France",
+		"latitude": 45.3590961315271,
+		"longitude": 5.960062729893141
+	}
+]

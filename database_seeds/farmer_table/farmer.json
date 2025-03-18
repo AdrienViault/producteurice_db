@@ -1,0 +1,29 @@
+[
+	{
+		"id": 1,
+		"farm_id": 1,
+		"name": "Frédéric",
+		"surname": "Faucon",
+		"description": "Docteur en biologie reconverti producteur",
+		"farming_start_year": 2018,
+		"birth_year": 1989
+	},
+	{
+		"id": 2,
+		"farm_id": 2,
+		"name": "Maxime",
+		"surname": "Germain",
+		"description": "Docteur en biologie reconverti producteur",
+		"farming_start_year": 2017,
+		"birth_year": 1988
+	},
+	{
+		"id": 3,
+		"farm_id": 2,
+		"name": "Renaud",
+		"surname": "Stalinski",
+		"description": "Docteur en biologie reconverti producteur",
+		"farming_start_year": 2017,
+		"birth_year": 1988
+	}
+]

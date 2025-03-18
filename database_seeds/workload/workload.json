@@ -1,0 +1,162 @@
+[
+	{
+		"id": 1,
+		"farmer_id": 1,
+		"work_category_id": 1,
+		"season_id": 1,
+		"resource_id": 1,
+		"weekly_workload": 10
+	},
+	{
+		"id": 2,
+		"farmer_id": 1,
+		"work_category_id": 1,
+		"season_id": 1,
+		"resource_id": 2,
+		"weekly_workload": 10
+	},
+	{
+		"id": 3,
+		"farmer_id": 1,
+		"work_category_id": 1,
+		"season_id": 1,
+		"resource_id": 3,
+		"weekly_workload": 10
+	},
+	{
+		"id": 4,
+		"farmer_id": 1,
+		"work_category_id": 1,
+		"season_id": 1,
+		"resource_id": 4,
+		"weekly_workload": 10
+	},
+	{
+		"id": 5,
+		"farmer_id": 1,
+		"work_category_id": 1,
+		"season_id": 1,
+		"resource_id": 5,
+		"weekly_workload": 10
+	},
+	{
+		"id": 6,
+		"farmer_id": 1,
+		"work_category_id": 1,
+		"season_id": 1,
+		"resource_id": 6,
+		"weekly_workload": 10
+	},
+	{
+		"id": 7,
+		"farmer_id": 1,
+		"work_category_id": 1,
+		"season_id": 1,
+		"resource_id": 7,
+		"weekly_workload": 10
+	},
+	{
+		"id": 8,
+		"farmer_id": 1,
+		"work_category_id": 2,
+		"season_id": 1,
+		"resource_id": 1,
+		"weekly_workload": 10
+	},
+	{
+		"id": 9,
+		"farmer_id": 2,
+		"work_category_id": 2,
+		"season_id": 1,
+		"resource_id": 2,
+		"weekly_workload": 50
+	},
+	{
+		"id": 10,
+		"farmer_id": 3,
+		"work_category_id": 2,
+		"season_id": 1,
+		"resource_id": 2,
+		"weekly_workload": 50
+	},
+	{
+		"id": 11,
+		"farmer_id": 1,
+		"work_category_id": 1,
+		"season_id": 2,
+		"resource_id": 1,
+		"weekly_workload": 10
+	},
+	{
+		"id": 12,
+		"farmer_id": 1,
+		"work_category_id": 1,
+		"season_id": 2,
+		"resource_id": 2,
+		"weekly_workload": 10
+	},
+	{
+		"id": 13,
+		"farmer_id": 1,
+		"work_category_id": 1,
+		"season_id": 2,
+		"resource_id": 3,
+		"weekly_workload": 10
+	},
+	{
+		"id": 14,
+		"farmer_id": 1,
+		"work_category_id": 1,
+		"season_id": 2,
+		"resource_id": 4,
+		"weekly_workload": 10
+	},
+	{
+		"id": 15,
+		"farmer_id": 1,
+		"work_category_id": 1,
+		"season_id": 2,
+		"resource_id": 5,
+		"weekly_workload": 10
+	},
+	{
+		"id": 16,
+		"farmer_id": 1,
+		"work_category_id": 1,
+		"season_id": 2,
+		"resource_id": 6,
+		"weekly_workload": 10
+	},
+	{
+		"id": 17,
+		"farmer_id": 1,
+		"work_category_id": 1,
+		"season_id": 2,
+		"resource_id": 7,
+		"weekly_workload": 10
+	},
+	{
+		"id": 18,
+		"farmer_id": 1,
+		"work_category_id": 2,
+		"season_id": 2,
+		"resource_id": 1,
+		"weekly_workload": 10
+	},
+	{
+		"id": 19,
+		"farmer_id": 2,
+		"work_category_id": 2,
+		"season_id": 2,
+		"resource_id": 2,
+		"weekly_workload": 50
+	},
+	{
+		"id": 20,
+		"farmer_id": 3,
+		"work_category_id": 2,
+		"season_id": 2,
+		"resource_id": 2,
+		"weekly_workload": 50
+	}
+]

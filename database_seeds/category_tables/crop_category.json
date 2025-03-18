@@ -2,11 +2,19 @@
 	{
 		"id": 1,
 		"name": "Patates",
+		"unit": "hectares",
 		"vector_image_path": "/icons/potato.svg"
 	},
 	{
 		"id": 2,
 		"name": "Légumes",
+		"unit": "hectares",
 		"vector_image_path": "/icons/vegetables.svg"
+	},
+	{
+		"id": 3,
+		"name": "Algues",
+		"unit": "mètres carrés",
+		"vector_image_path": "/icons/seaweed.svg"
 	}
 ]

@@ -1,0 +1,26 @@
+[
+	{
+		"id": 1,
+		"name": "La Grange Gauthier",
+		"company_name": "Monsieur Frederic Faucon",
+		"description": "Ferme bio oeufs, poulets, miel",
+		"owner_number": 1,
+		"employee_number": 0,
+		"own_land": "false",
+		"creation_year": 2018,
+		"image_path": "/photos/grange_gauthier.jpg",
+		"page_creation_date": "2025-03-18"
+	},
+	{
+		"id": 2,
+		"name": "Spiruline de Chartreuse",
+		"company_name": "GAEC CHAR'ALGUE",
+		"description": "Producteurs de spiruline",
+		"owner_number": 1,
+		"employee_number": 0,
+		"own_land": "true",
+		"creation_year": 2017,
+		"image_path": "/photos/grange_gauthier.jpg",
+		"page_creation_date": "2025-03-18"
+	}
+]

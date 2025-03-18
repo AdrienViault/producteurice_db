@@ -63,6 +63,13 @@ class SellerCategory(Base):
     name = Column(String, nullable=False)
     vector_image_path = Column(String, nullable=False)
 
+class PhotoCategory(Base):
+    __tablename__ = 'photo_category'
+    id = Column(Integer, primary_key=True)
+    name = Column(String, nullable=False)
+    vector_image_path = Column(String, nullable=False)
+
+
 # --- Create Tables if They Don't Exist ---
 try:
     Base.metadata.create_all(engine)
@@ -81,13 +88,17 @@ seed_files = {
     "crop_category": "database_seeds/category_tables/crop_category.json",
     "product_category": "database_seeds/category_tables/product_category.json",
     "seller_category": "database_seeds/category_tables/seller_category.json",
+    "photo_category": "database_seeds/category_tables/photo_category.json",
+
 }
 
 model_mapping = {
     "animal_category": AnimalCategory,
     "crop_category": CropCategory,
     "product_category": ProductCategory,
-    "seller_category": SellerCategory
+    "seller_category": SellerCategory,
+    "photo_category": PhotoCategory
+
 }
 
 # --- Insert/Merge Seed Data for All Tables ---

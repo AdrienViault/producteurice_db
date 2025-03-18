@@ -1,0 +1,18 @@
+[
+	{
+		"id": 1,
+		"farm_id": 1,
+		"name": "Topinambour",
+		"crop_category_id": 1,
+		"description": "Topinambour",
+		"quantity": 0.01
+	},
+	{
+		"id": 2,
+		"farm_id": 2,
+		"name": "Spiruline",
+		"crop_category_id": 3,
+		"description": "Spiruline",
+		"quantity": 200
+	}
+]

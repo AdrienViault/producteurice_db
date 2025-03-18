@@ -1,0 +1,27 @@
+[
+	{
+		"id": 1,
+		"name": "farm",
+		"vector_image_path": "/icons/farm.svg"
+	},
+	{
+		"id": 2,
+		"name": "farmer",
+		"vector_image_path": "/icons/farmer.svg"
+	},
+	{
+		"id": 3,
+		"name": "product",
+		"vector_image_path": "/icons/product.svg"
+	},
+	{
+		"id": 4,
+		"name": "animal",
+		"vector_image_path": "/icons/eukaryote.svg"
+	},
+	{
+		"id": 5,
+		"name": "crop",
+		"vector_image_path": "/icons/prokaryote.svg"
+	}
+]

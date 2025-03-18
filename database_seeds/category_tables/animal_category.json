@@ -2,16 +2,25 @@
 	{
 		"id": 1,
 		"name": "Poules",
+		"unit": "Poule(s)",
 		"vector_image_path": "/icons/chicken.svg"
 	},
 	{
 		"id": 2,
-		"name": "Vaches",
-		"vector_image_path": "/icons/cow.svg"
+		"name": "Coqs",
+		"unit": "Coq(s)",
+		"vector_image_path": "/icons/roaster.svg"
 	},
 	{
 		"id": 3,
+		"name": "Vaches",
+		"unit": "Vache(s)",
+		"vector_image_path": "/icons/cow.svg"
+	},
+	{
+		"id": 4,
 		"name": "Abeilles",
+		"unit": "Ruche(s)",
 		"vector_image_path": "/icons/bee.svg"
 	}
 ]

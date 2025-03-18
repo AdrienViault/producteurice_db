@@ -1,0 +1,42 @@
+[
+	{
+		"id": 1,
+		"entity_type": "2",
+		"entity_id": 1,
+		"description": "Fred et son coq",
+		"capture_date": "2025-02-01",
+		"upload_date": "2025-03-01"
+	},
+	{
+		"id": 2,
+		"entity_type": "2",
+		"entity_id": 2,
+		"description": "Spirulo en pleine présentation",
+		"capture_date": "2020-05-20",
+		"upload_date": "2025-03-01"
+	},
+	{
+		"id": 3,
+		"entity_type": "2",
+		"entity_id": 3,
+		"description": "Algo en pleine présentation",
+		"capture_date": "2020-05-20",
+		"upload_date": "2025-03-01"
+	},
+	{
+		"id": 4,
+		"entity_type": "1",
+		"entity_id": 1,
+		"description": "Le poulailler de Fred en hiver",
+		"capture_date": "2025-02-01",
+		"upload_date": "2025-03-01"
+	},
+	{
+		"id": 5,
+		"entity_type": "1",
+		"entity_id": 2,
+		"description": "Les bassins à spiruline",
+		"capture_date": "2020-05-20",
+		"upload_date": "2025-03-01"
+	}
+]

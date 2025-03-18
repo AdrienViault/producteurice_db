@@ -10,7 +10,7 @@ account_key = os.getenv("STORAGE_ACCOUNT_KEY")
 container_name = os.getenv("STORAGE_CONTAINER_NAME")
 
 # Blob path prefix
-local_icon_folder = "data/icons/"
+local_icon_folder = "media/icons/"
 blob_folder_prefix = "icons/"
 
 # Build connection string

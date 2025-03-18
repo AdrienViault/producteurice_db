@@ -1,0 +1,12 @@
+[
+	{
+		"id": 1,
+		"name": "Printemps/Été",
+		"vector_image_path": "/icons/summer.svg"
+	},
+	{
+		"id": 2,
+		"name": "Automne/Hiver",
+		"vector_image_path": "/icons/winter.svg"
+	}
+]
