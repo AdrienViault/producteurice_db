@@ -1,0 +1,34 @@
+[
+	{
+		"id": 1,
+		"farm_id": 1,
+		"product_category_id": 1,
+		"short_description": "Cidre brut",
+		"long_description": "Cidre brut de qualité, idéal pour les apéritifs.",
+		"sub_product_list": [2, 3]
+	},
+	{
+		"id": 2,
+		"farm_id": 1,
+		"product_category_id": 2,
+		"short_description": "Pommes vertes",
+		"long_description": "Pommes vertes acidulées.",
+		"sub_product_list": []
+	},
+	{
+		"id": 3,
+		"farm_id": 1,
+		"product_category_id": 2,
+		"short_description": "Pommes rouges",
+		"long_description": "Pommes rouges sucrées.",
+		"sub_product_list": []
+	},
+	{
+		"id": 4,
+		"farm_id": 2,
+		"product_category_id": 1,
+		"short_description": "Spriuline en pastilles",
+		"long_description": "Spiruline en pastilles, idéal pour les sportifs.",
+		"sub_product_list": []
+	}
+]
