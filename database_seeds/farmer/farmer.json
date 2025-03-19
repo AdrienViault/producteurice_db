@@ -5,6 +5,7 @@
 		"name": "Frédéric",
 		"surname": "Faucon",
 		"description": "Docteur en biologie reconverti producteur",
+		"status": "owner",
 		"farming_start_year": 2018,
 		"birth_year": 1989
 	},
@@ -14,6 +15,7 @@
 		"name": "Maxime",
 		"surname": "Germain",
 		"description": "Docteur en biologie reconverti producteur",
+		"status": "owner",
 		"farming_start_year": 2017,
 		"birth_year": 1988
 	},
@@ -23,6 +25,7 @@
 		"name": "Renaud",
 		"surname": "Stalinski",
 		"description": "Docteur en biologie reconverti producteur",
+		"status": "owner",
 		"farming_start_year": 2017,
 		"birth_year": 1988
 	}

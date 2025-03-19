@@ -13,7 +13,7 @@
 		"work_category_id": 1,
 		"season_id": 1,
 		"resource_id": 2,
-		"weekly_workload": 10
+		"weekly_workload": 11
 	},
 	{
 		"id": 3,
@@ -21,7 +21,7 @@
 		"work_category_id": 1,
 		"season_id": 1,
 		"resource_id": 3,
-		"weekly_workload": 10
+		"weekly_workload": 12
 	},
 	{
 		"id": 4,
@@ -29,7 +29,7 @@
 		"work_category_id": 1,
 		"season_id": 1,
 		"resource_id": 4,
-		"weekly_workload": 10
+		"weekly_workload": 13
 	},
 	{
 		"id": 5,
@@ -37,7 +37,7 @@
 		"work_category_id": 1,
 		"season_id": 1,
 		"resource_id": 5,
-		"weekly_workload": 10
+		"weekly_workload": 14
 	},
 	{
 		"id": 6,
@@ -45,7 +45,7 @@
 		"work_category_id": 1,
 		"season_id": 1,
 		"resource_id": 6,
-		"weekly_workload": 10
+		"weekly_workload": 15
 	},
 	{
 		"id": 7,
@@ -53,7 +53,7 @@
 		"work_category_id": 1,
 		"season_id": 1,
 		"resource_id": 7,
-		"weekly_workload": 10
+		"weekly_workload": 16
 	},
 	{
 		"id": 8,
@@ -61,7 +61,7 @@
 		"work_category_id": 2,
 		"season_id": 1,
 		"resource_id": 1,
-		"weekly_workload": 10
+		"weekly_workload": 17
 	},
 	{
 		"id": 9,
@@ -77,7 +77,7 @@
 		"work_category_id": 2,
 		"season_id": 1,
 		"resource_id": 2,
-		"weekly_workload": 50
+		"weekly_workload": 51
 	},
 	{
 		"id": 11,
@@ -85,7 +85,7 @@
 		"work_category_id": 1,
 		"season_id": 2,
 		"resource_id": 1,
-		"weekly_workload": 10
+		"weekly_workload": 19
 	},
 	{
 		"id": 12,
@@ -93,7 +93,7 @@
 		"work_category_id": 1,
 		"season_id": 2,
 		"resource_id": 2,
-		"weekly_workload": 10
+		"weekly_workload": 20
 	},
 	{
 		"id": 13,
@@ -101,7 +101,7 @@
 		"work_category_id": 1,
 		"season_id": 2,
 		"resource_id": 3,
-		"weekly_workload": 10
+		"weekly_workload": 21
 	},
 	{
 		"id": 14,
@@ -109,7 +109,7 @@
 		"work_category_id": 1,
 		"season_id": 2,
 		"resource_id": 4,
-		"weekly_workload": 10
+		"weekly_workload": 22
 	},
 	{
 		"id": 15,
@@ -117,7 +117,7 @@
 		"work_category_id": 1,
 		"season_id": 2,
 		"resource_id": 5,
-		"weekly_workload": 10
+		"weekly_workload": 23
 	},
 	{
 		"id": 16,
@@ -125,7 +125,7 @@
 		"work_category_id": 1,
 		"season_id": 2,
 		"resource_id": 6,
-		"weekly_workload": 10
+		"weekly_workload": 24
 	},
 	{
 		"id": 17,
@@ -133,7 +133,7 @@
 		"work_category_id": 1,
 		"season_id": 2,
 		"resource_id": 7,
-		"weekly_workload": 10
+		"weekly_workload": 25
 	},
 	{
 		"id": 18,
@@ -141,7 +141,7 @@
 		"work_category_id": 2,
 		"season_id": 2,
 		"resource_id": 1,
-		"weekly_workload": 10
+		"weekly_workload": 26
 	},
 	{
 		"id": 19,
@@ -149,7 +149,7 @@
 		"work_category_id": 2,
 		"season_id": 2,
 		"resource_id": 2,
-		"weekly_workload": 50
+		"weekly_workload": 52
 	},
 	{
 		"id": 20,
@@ -157,6 +157,6 @@
 		"work_category_id": 2,
 		"season_id": 2,
 		"resource_id": 2,
-		"weekly_workload": 50
+		"weekly_workload": 53
 	}
 ]

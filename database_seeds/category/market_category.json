@@ -1,0 +1,17 @@
+[
+	{
+		"id": 1,
+		"name": "particulier",
+		"vector_image_path": "/icons/farmer.svg"
+	},
+	{
+		"id": 2,
+		"name": "professionnel",
+		"vector_image_path": "/icons/farmer.svg"
+	},
+	{
+		"id": 3,
+		"name": "aucun",
+		"vector_image_path": "/icons/farmer.svg"
+	}
+]

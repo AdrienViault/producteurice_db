@@ -1,0 +1,16 @@
+[
+	{
+		"id": 1,
+		"farm_id": 1,
+		"description": "Présentation de la ferme par Fred",
+		"capture_date": "2025-02-01",
+		"upload_date": "2025-03-01"
+	},
+	{
+		"id": 2,
+		"farm_id": 2,
+		"description": "Présentation de la ferme par les associés",
+		"capture_date": "2020-05-20",
+		"upload_date": "2025-03-01"
+	}
+]
