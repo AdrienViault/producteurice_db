@@ -29,6 +29,18 @@ connection_string = (
 # Create the SQLAlchemy engine
 engine = create_engine(connection_string)
 
+with engine.connect() as conn:
+    # Query to list all tables in the public schema
+    result = conn.execute(text("SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'"))
+    tables = [row[0] for row in result]
+    
+if tables:
+    print("Existing tables in the public schema:")
+    for table in tables:
+        print(" -", table)
+else:
+    print("No tables found in the public schema.")
+
 # Ask for manual confirmation
 confirm = input("Are you sure you want to delete all tables from the database? This operation cannot be undone. Type 'yes' to confirm: ")
 if confirm.lower() == "yes":
