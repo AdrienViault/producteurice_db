@@ -26,5 +26,9 @@ jobs:
             - name: Install ffmpeg (for video tests)
               run: sudo apt-get install ffmpeg
 
-            - name: Run tests
-              run: pytest -s
+            - name: Run Azure Blob Storage Tests
+              env:
+                  STORAGE_ACCOUNT_NAME: ${{ secrets.STORAGE_ACCOUNT_NAME }}
+                  STORAGE_ACCOUNT_KEY: ${{ secrets.STORAGE_ACCOUNT_KEY }}
+                  STORAGE_CONTAINER_NAME: ${{ secrets.STORAGE_CONTAINER_NAME }}
+              run: pytest -s -v tests/test_azure_blob_storage.py
