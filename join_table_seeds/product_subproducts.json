@@ -1,0 +1,34 @@
+{
+	"references": {
+		"column_1_reference_table": "product",
+		"column_2_reference_table": "product",
+		"column_1_reference_key": "id",
+		"column_2_reference_key": "id"
+	},
+	"content": [
+		{
+			"product_id": 2,
+			"subproduct_id": 1
+		},
+		{
+			"product_id": 3,
+			"subproduct_id": 2
+		},
+		{
+			"product_id": 6,
+			"subproduct_id": 5
+		},
+		{
+			"product_id": 8,
+			"subproduct_id": 7
+		},
+		{
+			"product_id": 9,
+			"subproduct_id": 7
+		},
+		{
+			"product_id": 10,
+			"subproduct_id": 7
+		}
+	]
+}

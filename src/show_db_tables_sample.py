@@ -43,6 +43,41 @@ def get_tables(conn):
         print("Error retrieving table list:", e)
         return []
 
+def get_row_count(conn, table_name):
+    """
+    Retrieve the number of rows in a given table.
+    """
+    query = text(f"SELECT COUNT(*) FROM {table_name}")
+    try:
+        result = conn.execute(query)
+        return result.scalar()
+    except SQLAlchemyError as e:
+        print(f"Error retrieving row count for table '{table_name}':", e)
+        return None
+
+def get_columns_info(conn, table_name):
+    """
+    Retrieve column information (name and data type) for a given table from information_schema.
+    """
+    query = text("""
+        SELECT column_name, data_type, character_maximum_length
+        FROM information_schema.columns 
+        WHERE table_schema = 'public' AND table_name = :table_name
+        ORDER BY ordinal_position
+    """)
+    try:
+        result = conn.execute(query, {"table_name": table_name})
+        columns = []
+        for row in result:
+            col_name, data_type, char_max_length = row
+            if char_max_length:
+                data_type += f"({char_max_length})"
+            columns.append((col_name, data_type))
+        return columns
+    except SQLAlchemyError as e:
+        print(f"Error retrieving columns for table '{table_name}':", e)
+        return None
+
 def sample_table(conn, table_name, limit=5):
     """
     Retrieve a small sample of rows from the given table.
@@ -64,14 +99,23 @@ def main():
         print("Tables found in the database:")
         for table in tables:
             print(f"\nTable: {table}")
+            count = get_row_count(conn, table)
+            if count is not None:
+                print(f"  Row count: {count}")
+            columns_info = get_columns_info(conn, table)
+            if columns_info:
+                print("  Columns:")
+                for col_name, data_type in columns_info:
+                    print(f"    - {col_name}: {data_type}")
             sample = sample_table(conn, table, limit=5)
             if sample is None:
-                print("  (Error retrieving data)")
+                print("  (Error retrieving sample data)")
             elif not sample:
                 print("  (No data)")
             else:
+                print("  Sample rows:")
                 for row in sample:
-                    print("  ", row)
+                    print("    ", row)
 
 if __name__ == "__main__":
     main()

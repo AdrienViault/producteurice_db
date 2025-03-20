@@ -72,9 +72,6 @@ def infer_sql_type(key, value):
         return "INTEGER"
     elif "latitude" in lower_key or "longitude" in lower_key:
         return "DECIMAL(9,6)"
-    elif isinstance(value, list):
-        # Assuming list of integers; adjust if needed
-        return "INTEGER[]"
     else:
         if isinstance(value, int):
             return "INTEGER"
