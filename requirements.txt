@@ -1,3 +1,4 @@
+azure-storage-blob
 sqlalchemy
 psycopg2>=2.9
 pytest>=7.0
