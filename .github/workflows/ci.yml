@@ -31,4 +31,13 @@ jobs:
                   STORAGE_ACCOUNT_NAME: ${{ secrets.STORAGE_ACCOUNT_NAME }}
                   STORAGE_ACCOUNT_KEY: ${{ secrets.STORAGE_ACCOUNT_KEY }}
                   STORAGE_CONTAINER_NAME: ${{ secrets.STORAGE_CONTAINER_NAME }}
-              run: pytest -s -v tests/test_azure_blob_storage.py
+              run: pytest -s -v tests/test_blob_structure.py
+
+            - name: Run Azure db tables Tests
+              env:
+                  DB_HOST: ${{ secrets.DB_HOST }}
+                  DB_PORT: ${{ secrets.DB_PORT }}
+                  DB_NAME: ${{ secrets.DB_NAME }}
+                  DB_USER: ${{ secrets.DB_USER }}
+                  DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+              run: pytest -s -v tests/test_db_tables_population.py
