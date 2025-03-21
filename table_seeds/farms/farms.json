@@ -6,7 +6,10 @@
 		"description": "Ferme bio oeufs, poulets, miel",
 		"own_land": "false",
 		"creation_year": 2018,
-		"page_creation_date": "2025-03-18"
+		"page_creation_date": "2025-03-18",
+		"current_documentary_id": 1,
+		"current_herovideo_id": 1,
+		"current_photo_id": 4
 	},
 	{
 		"id": 2,
@@ -15,6 +18,9 @@
 		"description": "Producteurs de spiruline",
 		"own_land": "true",
 		"creation_year": 2017,
-		"page_creation_date": "2025-03-18"
+		"page_creation_date": "2025-03-18",
+		"current_documentary_id": 2,
+		"current_herovideo_id": 1,
+		"current_photo_id": 5
 	}
 ]

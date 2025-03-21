@@ -7,7 +7,8 @@
 		"description": "Docteur en biologie reconverti producteur",
 		"status": "owner",
 		"farming_start_year": 2018,
-		"birth_year": 1989
+		"birth_year": 1989,
+		"current_photo_id": 1
 	},
 	{
 		"id": 2,
@@ -17,7 +18,8 @@
 		"description": "Docteur en biologie reconverti producteur",
 		"status": "owner",
 		"farming_start_year": 2017,
-		"birth_year": 1988
+		"birth_year": 1988,
+		"current_photo_id": 2
 	},
 	{
 		"id": 3,
@@ -27,6 +29,7 @@
 		"description": "Docteur en biologie reconverti producteur",
 		"status": "owner",
 		"farming_start_year": 2017,
-		"birth_year": 1988
+		"birth_year": 1988,
+		"current_photo_id": 3
 	}
 ]

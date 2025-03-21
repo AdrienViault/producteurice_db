@@ -5,7 +5,8 @@
 		"farm_id": 1,
 		"product_category_id": 1,
 		"short_description": "Oeufs",
-		"long_description": "Oeufs bio de 53g."
+		"long_description": "Oeufs bio de 53g.",
+		"current_photo_id": 16
 	},
 	{
 		"id": 2,
@@ -13,7 +14,8 @@
 		"farm_id": 1,
 		"product_category_id": 1,
 		"short_description": "Viande de poulet",
-		"long_description": "Viande de poulet bio de 26 semaines."
+		"long_description": "Viande de poulet bio de 26 semaines.",
+		"current_photo_id": 17
 	},
 	{
 		"id": 3,
@@ -21,7 +23,8 @@
 		"farm_id": 1,
 		"product_category_id": 1,
 		"short_description": "Pathé de poulet",
-		"long_description": "Pathé de poulet bio aux herbes."
+		"long_description": "Pathé de poulet bio aux herbes.",
+		"current_photo_id": 18
 	},
 	{
 		"id": 4,
@@ -29,7 +32,8 @@
 		"farm_id": 1,
 		"product_category_id": 3,
 		"short_description": "Miel de xxx",
-		"long_description": "Miel toutes fleurs de xxx. Ruches en Ardèche. Méthodologie spéciale pour le rendre crémeux."
+		"long_description": "Miel toutes fleurs de xxx. Ruches en Ardèche. Méthodologie spéciale pour le rendre crémeux.",
+		"current_photo_id": 19
 	},
 	{
 		"id": 5,
@@ -37,7 +41,8 @@
 		"farm_id": 1,
 		"product_category_id": 3,
 		"short_description": "Miel de yyy",
-		"long_description": "Miel  de chatainier de yyy. Ruches en Haute Loire. Méthodologie spéciale pour le rendre liquide."
+		"long_description": "Miel  de chatainier de yyy. Ruches en Haute Loire. Méthodologie spéciale pour le rendre liquide.",
+		"current_photo_id": 20
 	},
 	{
 		"id": 6,
@@ -45,7 +50,8 @@
 		"farm_id": 1,
 		"product_category_id": 3,
 		"short_description": "Bière au miel",
-		"long_description": "Bière ambrée au miel bio de xxx. Titrage à 7°."
+		"long_description": "Bière ambrée au miel bio de xxx. Titrage à 7°.",
+		"current_photo_id": 21
 	},
 	{
 		"id": 7,
@@ -53,7 +59,8 @@
 		"farm_id": 2,
 		"product_category_id": 5,
 		"short_description": "Spiruline brute",
-		"long_description": "Algue"
+		"long_description": "Algue",
+		"current_photo_id": 22
 	},
 	{
 		"id": 8,
@@ -61,7 +68,8 @@
 		"farm_id": 2,
 		"product_category_id": 5,
 		"short_description": "Spiruline en poudre",
-		"long_description": "Spiruline en xxx idélae pour yyy"
+		"long_description": "Spiruline en xxx idélae pour yyy",
+		"current_photo_id": 23
 	},
 	{
 		"id": 9,
@@ -69,7 +77,8 @@
 		"farm_id": 2,
 		"product_category_id": 5,
 		"short_description": "Spiruline en paillettes",
-		"long_description": "Spiruline en xxx idélae pour yyy"
+		"long_description": "Spiruline en xxx idélae pour yyy",
+		"current_photo_id": 24
 	},
 	{
 		"id": 10,
@@ -77,6 +86,7 @@
 		"farm_id": 2,
 		"product_category_id": 5,
 		"short_description": "Spiruline en pastilles",
-		"long_description": "Spiruline en xxx idélae pour yyy"
+		"long_description": "Spiruline en xxx idélae pour yyy",
+		"current_photo_id": 25
 	}
 ]
