@@ -9,7 +9,7 @@
 		"page_creation_date": "2025-03-18",
 		"current_documentary_id": 1,
 		"current_herovideo_id": 1,
-		"current_photo_id": 4
+		"main_photo_id": 4
 	},
 	{
 		"id": 2,
@@ -21,6 +21,6 @@
 		"page_creation_date": "2025-03-18",
 		"current_documentary_id": 2,
 		"current_herovideo_id": 1,
-		"current_photo_id": 5
+		"main_photo_id": 5
 	}
 ]
