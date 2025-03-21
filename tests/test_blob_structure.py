@@ -5,12 +5,12 @@ from dotenv import load_dotenv
 
 # Expected media subfolders (relative to your remote storage root)
 EXPECTED_SUBFOLDERS = [
-    "media/animal",
-    "media/crop",
-    "media/farm",
-    "media/farmer",
+    "media/animals",
+    "media/crops",
+    "media/farms",
+    "media/farmers",
     "media/icons",
-    "media/product"
+    "media/products"
 ]
 
 @pytest.fixture(scope="module")

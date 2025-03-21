@@ -72,6 +72,8 @@ def infer_sql_type(key, value):
         return "INTEGER"
     elif "latitude" in lower_key or "longitude" in lower_key:
         return "DECIMAL(9,6)"
+    elif "is_" in lower_key[0:3] or "has_" in lower_key[0:4]:
+        return "BOOLEAN"
     else:
         if isinstance(value, int):
             return "INTEGER"

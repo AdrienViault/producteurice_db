@@ -30,26 +30,26 @@ engine = create_engine(connection_string)
 
 # List of tables expected to be populated (matching your seed structure)
 TABLES = [
-    "address",
-    "animal_category",
-    "crop_category",
-    "market_category",
-    "photo_category",
-    "product_category",
-    "season_category",
-    "seller_category",
-    "workload_category",
-    "label",
-    "unofficial_label",
-    "documentary",
-    "farm",
-    "farmer",
-    "herovideo",
-    "photo",
-    "product",
-    "animal",   # from resource_tables/animal.json
-    "crop",     # from resource_tables/crop.json
-    "workload"
+    "addresses",
+    "animal_categories",
+    "crop_categories",
+    "market_categories",
+    "photo_categories",
+    "product_categories",
+    "season_categories",
+    "seller_categories",
+    "workload_categories",
+    "labels",
+    "unofficial_labels",
+    "documentaries",
+    "farms",
+    "farmers",
+    "herovideos",
+    "photos",
+    "products",
+    "animals",   # from resource_tables/animals.json
+    "crops",     # from resource_tables/crops.json
+    "workloads"
 ]
 
 @pytest.mark.parametrize("table_name", TABLES)

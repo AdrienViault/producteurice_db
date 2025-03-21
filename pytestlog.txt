@@ -1,0 +1,3958 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.21, pytest-8.3.4, pluggy-1.5.0
+rootdir: /home/adrien/Documents/Dev/producteurice_db
+configfile: pytest.ini
+collected 58 items
+
+tests/local_media_tests/test_exist_photo_file.py E                       [  1%]
+tests/local_media_tests/test_join_table_seeds_structure.py .             [  3%]
+tests/local_media_tests/test_media.py ......                             [ 13%]
+tests/local_media_tests/test_media_readable.py ...                       [ 18%]
+tests/local_media_tests/test_seed_structure.py .....................     [ 55%]
+tests/test_blob_structure.py FFFFFF                                      [ 65%]
+tests/test_db_tables_population.py FFFFFFFFFFFFFFFFFFFF                  [100%]
+
+==================================== ERRORS ====================================
+__________________ ERROR at setup of test_photos_files_exist ___________________
+
+    @pytest.fixture(scope="module")
+    def photos_category_data():
+        photos_category_path = os.path.join(SEEDS_ROOT, "category", "photos_category.json")
+>       return load_json_file(photos_category_path)
+
+tests/local_media_tests/test_exist_photo_file.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+file_path = 'table_seeds/category/photos_category.json'
+
+    def load_json_file(file_path):
+>       with open(file_path, "r", encoding="utf-8") as f:
+E       FileNotFoundError: [Errno 2] No such file or directory: 'table_seeds/category/photos_category.json'
+
+tests/local_media_tests/test_exist_photo_file.py:12: FileNotFoundError
+=================================== FAILURES ===================================
+______________ test_media_subfolder_contains_files[media/animal] _______________
+
+container_client = <azure.storage.blob._container_client.ContainerClient object at 0x75e7abac4d60>
+subfolder = 'media/animal'
+
+    @pytest.mark.parametrize("subfolder", EXPECTED_SUBFOLDERS)
+    def test_media_subfolder_contains_files(container_client, subfolder):
+        """
+        Verify that each expected media subfolder in the remote blob storage contains at least one file.
+        """
+        blobs = list_blobs_in_prefix(container_client, subfolder)
+>       assert blobs, f"No files found in remote subfolder: {subfolder}"
+E       AssertionError: No files found in remote subfolder: media/animal
+E       assert []
+
+tests/test_blob_structure.py:42: AssertionError
+_______________ test_media_subfolder_contains_files[media/crop] ________________
+
+container_client = <azure.storage.blob._container_client.ContainerClient object at 0x75e7abac4d60>
+subfolder = 'media/crop'
+
+    @pytest.mark.parametrize("subfolder", EXPECTED_SUBFOLDERS)
+    def test_media_subfolder_contains_files(container_client, subfolder):
+        """
+        Verify that each expected media subfolder in the remote blob storage contains at least one file.
+        """
+        blobs = list_blobs_in_prefix(container_client, subfolder)
+>       assert blobs, f"No files found in remote subfolder: {subfolder}"
+E       AssertionError: No files found in remote subfolder: media/crop
+E       assert []
+
+tests/test_blob_structure.py:42: AssertionError
+_______________ test_media_subfolder_contains_files[media/farm] ________________
+
+container_client = <azure.storage.blob._container_client.ContainerClient object at 0x75e7abac4d60>
+subfolder = 'media/farm'
+
+    @pytest.mark.parametrize("subfolder", EXPECTED_SUBFOLDERS)
+    def test_media_subfolder_contains_files(container_client, subfolder):
+        """
+        Verify that each expected media subfolder in the remote blob storage contains at least one file.
+        """
+        blobs = list_blobs_in_prefix(container_client, subfolder)
+>       assert blobs, f"No files found in remote subfolder: {subfolder}"
+E       AssertionError: No files found in remote subfolder: media/farm
+E       assert []
+
+tests/test_blob_structure.py:42: AssertionError
+______________ test_media_subfolder_contains_files[media/farmer] _______________
+
+container_client = <azure.storage.blob._container_client.ContainerClient object at 0x75e7abac4d60>
+subfolder = 'media/farmer'
+
+    @pytest.mark.parametrize("subfolder", EXPECTED_SUBFOLDERS)
+    def test_media_subfolder_contains_files(container_client, subfolder):
+        """
+        Verify that each expected media subfolder in the remote blob storage contains at least one file.
+        """
+        blobs = list_blobs_in_prefix(container_client, subfolder)
+>       assert blobs, f"No files found in remote subfolder: {subfolder}"
+E       AssertionError: No files found in remote subfolder: media/farmer
+E       assert []
+
+tests/test_blob_structure.py:42: AssertionError
+_______________ test_media_subfolder_contains_files[media/icons] _______________
+
+container_client = <azure.storage.blob._container_client.ContainerClient object at 0x75e7abac4d60>
+subfolder = 'media/icons'
+
+    @pytest.mark.parametrize("subfolder", EXPECTED_SUBFOLDERS)
+    def test_media_subfolder_contains_files(container_client, subfolder):
+        """
+        Verify that each expected media subfolder in the remote blob storage contains at least one file.
+        """
+        blobs = list_blobs_in_prefix(container_client, subfolder)
+>       assert blobs, f"No files found in remote subfolder: {subfolder}"
+E       AssertionError: No files found in remote subfolder: media/icons
+E       assert []
+
+tests/test_blob_structure.py:42: AssertionError
+______________ test_media_subfolder_contains_files[media/product] ______________
+
+container_client = <azure.storage.blob._container_client.ContainerClient object at 0x75e7abac4d60>
+subfolder = 'media/product'
+
+    @pytest.mark.parametrize("subfolder", EXPECTED_SUBFOLDERS)
+    def test_media_subfolder_contains_files(container_client, subfolder):
+        """
+        Verify that each expected media subfolder in the remote blob storage contains at least one file.
+        """
+        blobs = list_blobs_in_prefix(container_client, subfolder)
+>       assert blobs, f"No files found in remote subfolder: {subfolder}"
+E       AssertionError: No files found in remote subfolder: media/product
+E       assert []
+
+tests/test_blob_structure.py:42: AssertionError
+_______________________ test_table_population[addresses] _______________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7aeb06bb0>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7abae3580>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7abae3820>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2a400; closed: -1>
+statement = 'SELECT COUNT(*) FROM addresses', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7abae3580>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "addresses" does not exist
+E       LINE 1: SELECT COUNT(*) FROM addresses
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'addresses'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2a400; closed: -1>
+statement = 'SELECT COUNT(*) FROM addresses', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7abae3580>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "addresses" does not exist
+E       LINE 1: SELECT COUNT(*) FROM addresses
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM addresses]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+___________________ test_table_population[animal_categories] ___________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7aeb0f670>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aeb39f40>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7aeb0f310>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2a8b0; closed: -1>
+statement = 'SELECT COUNT(*) FROM animal_categories', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aeb39f40>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "animal_categories" does not exist
+E       LINE 1: SELECT COUNT(*) FROM animal_categories
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'animal_categories'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2a8b0; closed: -1>
+statement = 'SELECT COUNT(*) FROM animal_categories', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aeb39f40>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "animal_categories" does not exist
+E       LINE 1: SELECT COUNT(*) FROM animal_categories
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM animal_categories]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+____________________ test_table_population[crop_categories] ____________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7ab72bca0>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab72b580>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7ab72bc40>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ad60; closed: -1>
+statement = 'SELECT COUNT(*) FROM crop_categories', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab72b580>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "crop_categories" does not exist
+E       LINE 1: SELECT COUNT(*) FROM crop_categories
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'crop_categories'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ad60; closed: -1>
+statement = 'SELECT COUNT(*) FROM crop_categories', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab72b580>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "crop_categories" does not exist
+E       LINE 1: SELECT COUNT(*) FROM crop_categories
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM crop_categories]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+___________________ test_table_population[market_categories] ___________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7ab73fcd0>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab73f370>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7ab73f190>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2a400; closed: -1>
+statement = 'SELECT COUNT(*) FROM market_categories', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab73f370>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "market_categories" does not exist
+E       LINE 1: SELECT COUNT(*) FROM market_categories
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'market_categories'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2a400; closed: -1>
+statement = 'SELECT COUNT(*) FROM market_categories', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab73f370>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "market_categories" does not exist
+E       LINE 1: SELECT COUNT(*) FROM market_categories
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM market_categories]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+___________________ test_table_population[photo_categories] ____________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7aeb06ee0>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aeb06190>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7aeb06040>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ab80; closed: -1>
+statement = 'SELECT COUNT(*) FROM photo_categories', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aeb06190>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "photo_categories" does not exist
+E       LINE 1: SELECT COUNT(*) FROM photo_categories
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'photo_categories'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ab80; closed: -1>
+statement = 'SELECT COUNT(*) FROM photo_categories', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aeb06190>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "photo_categories" does not exist
+E       LINE 1: SELECT COUNT(*) FROM photo_categories
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM photo_categories]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+__________________ test_table_population[product_categories] ___________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7abab0ca0>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aeb0f580>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7aeb0f6a0>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ac70; closed: -1>
+statement = 'SELECT COUNT(*) FROM product_categories', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aeb0f580>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "product_categories" does not exist
+E       LINE 1: SELECT COUNT(*) FROM product_categories
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'product_categories'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ac70; closed: -1>
+statement = 'SELECT COUNT(*) FROM product_categories', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aeb0f580>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "product_categories" does not exist
+E       LINE 1: SELECT COUNT(*) FROM product_categories
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM product_categories]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+___________________ test_table_population[season_categories] ___________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7aeb06a60>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7acb11280>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7aeb06340>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2aa90; closed: -1>
+statement = 'SELECT COUNT(*) FROM season_categories', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7acb11280>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "season_categories" does not exist
+E       LINE 1: SELECT COUNT(*) FROM season_categories
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'season_categories'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2aa90; closed: -1>
+statement = 'SELECT COUNT(*) FROM season_categories', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7acb11280>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "season_categories" does not exist
+E       LINE 1: SELECT COUNT(*) FROM season_categories
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM season_categories]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+___________________ test_table_population[seller_categories] ___________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7ab67aa90>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab67a3d0>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7ab67aaf0>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2a7c0; closed: -1>
+statement = 'SELECT COUNT(*) FROM seller_categories', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab67a3d0>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "seller_categories" does not exist
+E       LINE 1: SELECT COUNT(*) FROM seller_categories
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'seller_categories'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2a7c0; closed: -1>
+statement = 'SELECT COUNT(*) FROM seller_categories', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab67a3d0>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "seller_categories" does not exist
+E       LINE 1: SELECT COUNT(*) FROM seller_categories
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM seller_categories]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+__________________ test_table_population[workload_categories] __________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7ab70aa60>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab70afd0>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7ab70ac40>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ac70; closed: -1>
+statement = 'SELECT COUNT(*) FROM workload_categories', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab70afd0>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "workload_categories" does not exist
+E       LINE 1: SELECT COUNT(*) FROM workload_categories
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'workload_categories'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ac70; closed: -1>
+statement = 'SELECT COUNT(*) FROM workload_categories', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab70afd0>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "workload_categories" does not exist
+E       LINE 1: SELECT COUNT(*) FROM workload_categories
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM workload_categories]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+________________________ test_table_population[labels] _________________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7ab709f40>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab709c40>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7ab709340>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2a8b0; closed: -1>
+statement = 'SELECT COUNT(*) FROM labels', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab709c40>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "labels" does not exist
+E       LINE 1: SELECT COUNT(*) FROM labels
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'labels'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2a8b0; closed: -1>
+statement = 'SELECT COUNT(*) FROM labels', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab709c40>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "labels" does not exist
+E       LINE 1: SELECT COUNT(*) FROM labels
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM labels]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+___________________ test_table_population[unofficial_labels] ___________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7ab706ca0>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab706b20>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7ab706130>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ab80; closed: -1>
+statement = 'SELECT COUNT(*) FROM unofficial_labels', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab706b20>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "unofficial_labels" does not exist
+E       LINE 1: SELECT COUNT(*) FROM unofficial_labels
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'unofficial_labels'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ab80; closed: -1>
+statement = 'SELECT COUNT(*) FROM unofficial_labels', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab706b20>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "unofficial_labels" does not exist
+E       LINE 1: SELECT COUNT(*) FROM unofficial_labels
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM unofficial_labels]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+_____________________ test_table_population[documentaries] _____________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7ab70d340>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aec3a9d0>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7ab70d2e0>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2a7c0; closed: -1>
+statement = 'SELECT COUNT(*) FROM documentaries', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aec3a9d0>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "documentaries" does not exist
+E       LINE 1: SELECT COUNT(*) FROM documentaries
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'documentaries'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2a7c0; closed: -1>
+statement = 'SELECT COUNT(*) FROM documentaries', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aec3a9d0>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "documentaries" does not exist
+E       LINE 1: SELECT COUNT(*) FROM documentaries
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM documentaries]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+_________________________ test_table_population[farms] _________________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7aae67850>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aae67430>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7aae67580>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ad60; closed: -1>
+statement = 'SELECT COUNT(*) FROM farms', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aae67430>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "farms" does not exist
+E       LINE 1: SELECT COUNT(*) FROM farms
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'farms'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ad60; closed: -1>
+statement = 'SELECT COUNT(*) FROM farms', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aae67430>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "farms" does not exist
+E       LINE 1: SELECT COUNT(*) FROM farms
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM farms]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+________________________ test_table_population[farmers] ________________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7ab70e640>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab70eee0>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7ab70e1c0>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ac70; closed: -1>
+statement = 'SELECT COUNT(*) FROM farmers', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab70eee0>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "farmers" does not exist
+E       LINE 1: SELECT COUNT(*) FROM farmers
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'farmers'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ac70; closed: -1>
+statement = 'SELECT COUNT(*) FROM farmers', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab70eee0>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "farmers" does not exist
+E       LINE 1: SELECT COUNT(*) FROM farmers
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM farmers]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+______________________ test_table_population[herovideos] _______________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7ab707820>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab707f70>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7ab707ca0>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2a8b0; closed: -1>
+statement = 'SELECT COUNT(*) FROM herovideos', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab707f70>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "herovideos" does not exist
+E       LINE 1: SELECT COUNT(*) FROM herovideos
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'herovideos'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2a8b0; closed: -1>
+statement = 'SELECT COUNT(*) FROM herovideos', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab707f70>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "herovideos" does not exist
+E       LINE 1: SELECT COUNT(*) FROM herovideos
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM herovideos]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+________________________ test_table_population[photos] _________________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7ab720790>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab7205b0>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7ab720130>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ae50; closed: -1>
+statement = 'SELECT COUNT(*) FROM photos', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab7205b0>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "photos" does not exist
+E       LINE 1: SELECT COUNT(*) FROM photos
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'photos'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ae50; closed: -1>
+statement = 'SELECT COUNT(*) FROM photos', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab7205b0>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "photos" does not exist
+E       LINE 1: SELECT COUNT(*) FROM photos
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM photos]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+_______________________ test_table_population[products] ________________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7abcf1f70>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aae68970>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7abab0b50>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ac70; closed: -1>
+statement = 'SELECT COUNT(*) FROM products', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aae68970>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "products" does not exist
+E       LINE 1: SELECT COUNT(*) FROM products
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'products'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ac70; closed: -1>
+statement = 'SELECT COUNT(*) FROM products', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aae68970>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "products" does not exist
+E       LINE 1: SELECT COUNT(*) FROM products
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM products]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+________________________ test_table_population[animals] ________________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7aae4f6a0>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aae4f4c0>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7aae4f4f0>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2a6d0; closed: -1>
+statement = 'SELECT COUNT(*) FROM animals', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aae4f4c0>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "animals" does not exist
+E       LINE 1: SELECT COUNT(*) FROM animals
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'animals'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2a6d0; closed: -1>
+statement = 'SELECT COUNT(*) FROM animals', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aae4f4c0>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "animals" does not exist
+E       LINE 1: SELECT COUNT(*) FROM animals
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM animals]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+_________________________ test_table_population[crops] _________________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7aae67c10>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aae67f10>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7aae67910>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ad60; closed: -1>
+statement = 'SELECT COUNT(*) FROM crops', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aae67f10>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "crops" does not exist
+E       LINE 1: SELECT COUNT(*) FROM crops
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'crops'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2ad60; closed: -1>
+statement = 'SELECT COUNT(*) FROM crops', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7aae67f10>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "crops" does not exist
+E       LINE 1: SELECT COUNT(*) FROM crops
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM crops]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+_______________________ test_table_population[workloads] _______________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x75e7ab6bd0d0>
+dialect = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab6bd6d0>
+statement = <sqlalchemy.dialects.postgresql.base.PGCompiler object at 0x75e7ab6bd6a0>
+parameters = [{}]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2a5e0; closed: -1>
+statement = 'SELECT COUNT(*) FROM workloads', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab6bd6d0>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       psycopg2.errors.UndefinedTable: relation "workloads" does not exist
+E       LINE 1: SELECT COUNT(*) FROM workloads
+E                                    ^
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: UndefinedTable
+
+The above exception was the direct cause of the following exception:
+
+table_name = 'workloads'
+
+    @pytest.mark.parametrize("table_name", TABLES)
+    def test_table_population(table_name):
+        """
+        Verify that each table in the remote database contains at least one row.
+        """
+        with engine.connect() as conn:
+>           result = conn.execute(text(f"SELECT COUNT(*) FROM {table_name}"))
+
+tests/test_db_tables_population.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1416: in execute
+    return meth(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/sql/elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1638: in _execute_clauseelement
+    ret = self._execute_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1843: in _execute_context
+    return self._exec_single_context(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1983: in _exec_single_context
+    self._handle_dbapi_exception(
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:2352: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/base.py:1964: in _exec_single_context
+    self.dialect.do_execute(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg2.PGDialect_psycopg2 object at 0x75e7ac3c2b80>
+cursor = <cursor object at 0x75e7abb2a5e0; closed: -1>
+statement = 'SELECT COUNT(*) FROM workloads', parameters = {}
+context = <sqlalchemy.dialects.postgresql.psycopg2.PGExecutionContext_psycopg2 object at 0x75e7ab6bd6d0>
+
+    def do_execute(self, cursor, statement, parameters, context=None):
+>       cursor.execute(statement, parameters)
+E       sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "workloads" does not exist
+E       LINE 1: SELECT COUNT(*) FROM workloads
+E                                    ^
+E       
+E       [SQL: SELECT COUNT(*) FROM workloads]
+E       (Background on this error at: https://sqlalche.me/e/20/f405)
+
+../../../miniconda3/envs/server/lib/python3.9/site-packages/sqlalchemy/engine/default.py:942: ProgrammingError
+=========================== short test summary info ============================
+FAILED tests/test_blob_structure.py::test_media_subfolder_contains_files[media/animal]
+FAILED tests/test_blob_structure.py::test_media_subfolder_contains_files[media/crop]
+FAILED tests/test_blob_structure.py::test_media_subfolder_contains_files[media/farm]
+FAILED tests/test_blob_structure.py::test_media_subfolder_contains_files[media/farmer]
+FAILED tests/test_blob_structure.py::test_media_subfolder_contains_files[media/icons]
+FAILED tests/test_blob_structure.py::test_media_subfolder_contains_files[media/product]
+FAILED tests/test_db_tables_population.py::test_table_population[addresses]
+FAILED tests/test_db_tables_population.py::test_table_population[animal_categories]
+FAILED tests/test_db_tables_population.py::test_table_population[crop_categories]
+FAILED tests/test_db_tables_population.py::test_table_population[market_categories]
+FAILED tests/test_db_tables_population.py::test_table_population[photo_categories]
+FAILED tests/test_db_tables_population.py::test_table_population[product_categories]
+FAILED tests/test_db_tables_population.py::test_table_population[season_categories]
+FAILED tests/test_db_tables_population.py::test_table_population[seller_categories]
+FAILED tests/test_db_tables_population.py::test_table_population[workload_categories]
+FAILED tests/test_db_tables_population.py::test_table_population[labels] - sq...
+FAILED tests/test_db_tables_population.py::test_table_population[unofficial_labels]
+FAILED tests/test_db_tables_population.py::test_table_population[documentaries]
+FAILED tests/test_db_tables_population.py::test_table_population[farms] - sql...
+FAILED tests/test_db_tables_population.py::test_table_population[farmers] - s...
+FAILED tests/test_db_tables_population.py::test_table_population[herovideos]
+FAILED tests/test_db_tables_population.py::test_table_population[photos] - sq...
+FAILED tests/test_db_tables_population.py::test_table_population[products] - ...
+FAILED tests/test_db_tables_population.py::test_table_population[animals] - s...
+FAILED tests/test_db_tables_population.py::test_table_population[crops] - sql...
+FAILED tests/test_db_tables_population.py::test_table_population[workloads]
+ERROR tests/local_media_tests/test_exist_photo_file.py::test_photos_files_exist
+==================== 26 failed, 31 passed, 1 error in 3.28s ====================
