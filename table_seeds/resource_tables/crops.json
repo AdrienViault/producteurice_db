@@ -5,8 +5,7 @@
 		"name": "Topinambour",
 		"crop_category_id": 1,
 		"description": "Topinambour",
-		"quantity": 0.01,
-		"main_photo_id": 6
+		"quantity": 0.01
 	},
 	{
 		"id": 2,
@@ -14,7 +13,6 @@
 		"name": "Spiruline",
 		"crop_category_id": 3,
 		"description": "Spiruline",
-		"quantity": 200,
-		"main_photo_id": 8
+		"quantity": 200
 	}
 ]
